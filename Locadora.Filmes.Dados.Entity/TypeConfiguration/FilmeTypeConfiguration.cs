@@ -8,54 +8,41 @@ using System.Threading.Tasks;
 
 namespace Locadora.Filmes.Dados.Entity.TypeConfiguration
 {
-    class AlbumTypeConfiguration : LocadoraEntityAbstractConfig<Album>
+    class FilmeTypeConfiguration : LocadoraEntityAbstractConfig<Filme>
     {
         protected override void ConfigurarCamposTabela()
         {
-            Property(p => p.Id)
+            Property(p=>p.IdFilme)
                 .IsRequired()
                 .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations
                                            .Schema.DatabaseGeneratedOption.Identity)
                 .HasColumnName("Id");
 
-            Property(p => p.Nome)
+            Property(p => p.NomeFilme)
                 .IsRequired()
                 .HasMaxLength(100)
                 .HasColumnName("Nome");
 
-            Property(p => p.Ano)
+            Property(p => p.IdAlbum)
                 .IsRequired()
-                .HasColumnName("Ano");
-
-            Property(p => p.Descricao)
-                .IsOptional()
-                .HasMaxLength(1000)
-                .HasColumnName("Descricao");
-
-            Property(p => p.Autor)
-                .IsRequired()
-                .HasMaxLength(100)
-                .HasColumnName("Autor");
-
-            Property(p => p.Email)
-                .IsRequired()
-                .HasColumnName("Email");
-
+                .HasColumnName("IdAlbum");
         }
 
         protected override void ConfigurarChaveEstrangeira()
         {
-            
+            HasRequired(p => p.Album)
+                .WithMany(p => p.Filmes)
+                .HasForeignKey(fk => fk.IdAlbum);            
         }
 
         protected override void ConfigurarChavePrimaria()
         {
-            HasKey(pk => pk.Id);
+            HasKey(pk=>pk.IdFilme);
         }
 
         protected override void ConfigurarNomeTabela()
         {
-            ToTable("Album");
+            ToTable("Filme");
         }
     }
 }

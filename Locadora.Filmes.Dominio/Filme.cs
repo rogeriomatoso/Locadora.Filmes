@@ -8,9 +8,9 @@ namespace Locadora.Filmes.Dominio
 {
     public class Filme
     {
-        public long Id { get; set; }
-        public string Nome { get; set; }
-        public virtual Album abum { get; set; }
+        public long IdFilme { get; set; }
+        public string NomeFilme { get; set; }
+        public virtual Album Album { get; set; }
         public int IdAlbum { get; set; }
 
     }

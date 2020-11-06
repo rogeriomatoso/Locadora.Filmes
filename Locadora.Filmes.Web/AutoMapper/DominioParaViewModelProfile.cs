@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Locadora.Filmes.Dominio;
 using Locadora.Filmes.Web.ViewModels.Album;
+using Locadora.Filmes.Web.ViewModels.Filme;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,14 @@ namespace Locadora.Filmes.Web.AutoMapper
                     );
                 });
             Mapper.CreateMap<Album, AlbumViewModel>();
+
+            Mapper.CreateMap<Filme, FilmeIndexViewModel>()
+                 .ForMember(p => p.NomeAlbum, opt =>
+                 {
+                     opt.MapFrom(src => src.Album.Nome);
+                 });
+
+            Mapper.CreateMap<Filme, FilmeViewModel>();
         }
     }
 }

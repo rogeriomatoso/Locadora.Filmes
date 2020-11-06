@@ -52,21 +52,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\FilmeDbContext.cs" />
-    <Compile Include="Migrations\202009180031234_MigracaoInicial.cs" />
-    <Compile Include="Migrations\202009180031234_MigracaoInicial.designer.cs">
-      <DependentUpon>202009180031234_MigracaoInicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009180048411_AdiicaoAutor.cs" />
-    <Compile Include="Migrations\202009180048411_AdiicaoAutor.designer.cs">
-      <DependentUpon>202009180048411_AdiicaoAutor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202010230025463_MigracaoEmail.cs" />
-    <Compile Include="Migrations\202010230025463_MigracaoEmail.designer.cs">
-      <DependentUpon>202010230025463_MigracaoEmail.cs</DependentUpon>
+    <Compile Include="Migrations\202011040022057_MigracaoInicial.cs" />
+    <Compile Include="Migrations\202011040022057_MigracaoInicial.designer.cs">
+      <DependentUpon>202011040022057_MigracaoInicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeConfiguration\AlbumTypeConfiguration.cs" />
+    <Compile Include="TypeConfiguration\FilmeTypeConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -83,14 +76,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009180031234_MigracaoInicial.resx">
-      <DependentUpon>202009180031234_MigracaoInicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009180048411_AdiicaoAutor.resx">
-      <DependentUpon>202009180048411_AdiicaoAutor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010230025463_MigracaoEmail.resx">
-      <DependentUpon>202010230025463_MigracaoEmail.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202011040022057_MigracaoInicial.resx">
+      <DependentUpon>202011040022057_MigracaoInicial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
