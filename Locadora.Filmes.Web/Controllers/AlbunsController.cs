@@ -26,6 +26,18 @@ namespace Locadora.Filmes.Web.Controllers
             return View(Mapper.Map<List<Album>, List<AlbumIndexViewModel>>(repositorioAlbuns.Selecionar()));
         }
 
+        public ActionResult FiltrarPorNome(string pesquisa)
+        {
+            List<Album> albuns = repositorioAlbuns
+                .Selecionar()
+                .Where(a => a.Nome.Contains(pesquisa)).ToList();
+
+            List<AlbumIndexViewModel> viewModels = Mapper
+                .Map<List<Album>, List<AlbumIndexViewModel>>(albuns);
+
+            return Json(viewModels, JsonRequestBehavior.AllowGet);
+        }
+
         // GET: Albuns/Details/5
         public ActionResult Details(int? id)
         {
