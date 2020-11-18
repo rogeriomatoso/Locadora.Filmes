@@ -77,7 +77,7 @@
                 var termoPesquisa = $("#pesquisarAlbum").val();
                 $.ajax({
                     method: "GET",
-                    url: "/Albuns/FiltrarPorNome?pesquisa=" + termoPesquisa,
+                    url: "/Albuns/FiltrarPorNome/" + termoPesquisa,
                     success: function (data) {
                         $("#tblAlbuns tbody > tr").remove();
                         $.each(data, function (i, album) {

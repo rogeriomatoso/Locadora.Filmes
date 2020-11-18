@@ -11,16 +11,18 @@ using Locadora.Filmes.Dados.Entity.Context;
 using Locadora.Filmes.Dominio;
 using Locadora.Filmes.Repositorios.Comum;
 using Locadora.Filmes.Repositorios.Entity;
+using Locadora.Filmes.Web.Filtros;
 using Locadora.Filmes.Web.ViewModels.Album;
 
 namespace Locadora.Filmes.Web.Controllers
 {
+    //[LogActionFilter] - acrescentado na pasta App_Config: FilterConfig.cs
     public class AlbunsController : Controller
     {
         private IRepositorioGenerico<Album, int>
              repositorioAlbuns = new AlbunsRepositorio(new FilmeDbContext());
 
-        // GET: Albuns
+        // GET: Albuns       
         public ActionResult Index()
         {
             return View(Mapper.Map<List<Album>, List<AlbumIndexViewModel>>(repositorioAlbuns.Selecionar()));
