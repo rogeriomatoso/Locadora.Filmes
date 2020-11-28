@@ -22,3 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
+.navbar-inverse .navbar-nav >li >p {
+    color: #FFFFFF !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+

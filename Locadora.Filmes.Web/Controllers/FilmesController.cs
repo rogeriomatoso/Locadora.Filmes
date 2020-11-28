@@ -16,6 +16,7 @@ using Locadora.Filmes.Web.ViewModels.Filme;
 
 namespace Locadora.Filmes.Web.Controllers
 {
+    [Authorize]
     public class FilmesController : Controller
     {
         private IRepositorioGenerico<Filme, long>

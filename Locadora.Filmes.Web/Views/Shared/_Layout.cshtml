@@ -24,6 +24,24 @@
                     <li>@Html.ActionLink("Início", "Index", "Home")</li>
                     <li>@Html.ActionLink("Sobre", "About", "Home")</li>
                     <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>
+                            <p>Bem-Vindo(a), @User.Identity.Name</p>
+                        </li>
+                        <li>
+                            @Html.ActionLink("Fazer Logoff", "Logoff", "Usuarios");
+                        </li>
+                    }
+                    else
+                    {
+                <li>
+                    @Html.ActionLink("Criar Usuário", "CriarUsuario", "Usuarios");
+                </li>
+                <li>                    
+                    @Html.ActionLink("Fazer Login", "Login", "Usuarios");
+                </li>
+                    }
                 </ul>
             </div>
         </div>
